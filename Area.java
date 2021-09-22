@@ -2,42 +2,74 @@ import java.util.Scanner;
 
 public class Area 
 {
-	int area;
-	
-	int width,length;
-	float pi = 3.14f,radius,value;
-	
-	Scanner sc = new Scanner(System.in);
-	
-	public void Area(int area)
-	{
-		value = (area*area);
-		System.out.println("Area of a square "+value);
-	}
-	
-	public void Area(float radius)
-	{
-		float r=radius*radius;
-	    value =	pi*r;
-		System.out.println("Area of a circle "+value);
-	}
-	
-	public void Area(int width,int length)
-	{
-	    
-		int l = length;
-		int w = width;
-		int total = w*l;
-		System.out.println("Area of a rectangle "+total);
-	}
-	
+
 	public static void main(String[] args) 
 	{
-		Area ar = new Area();
-		ar.Area(1234);
-		ar.Area(30);
-		ar.Area(32, 76);
+		int radius,width,length,value,breath,area;
+ 		
+        Scanner sc =new Scanner(System.in);
+		
+	
+	
+		System.out.println("*************************************");
+		System.out.println("1 Area of a circle");
+		System.out.println("2.Area of a square");
+		System.out.println("3.Area of a right angled triangle");
+		System.out.println("4.Area of a rectangle Circumference of a circle");
+		System.out.println("5.Circumference of a circle");
+		System.out.println("*************************************");
+	
+		
+		int number = sc.nextInt();
+
+		switch(number)
+		{
+		
+		    case 1:
+		    	System.out.println("enter radius");
+		    	radius = sc.nextInt();
+		     float v = (float)(3.14f*(radius^2));
+				System.out.println("Area of a circle = "+v);
+				break;
+			
+			case 2:
+				System.out.println("enter area");
+		    	area = sc.nextInt();
+				value = (area^2);
+				System.out.println("Area of a square "+value);
+				break;
+				
+			case 3:
+				System.out.println("enter area");
+		    	area = sc.nextInt();
+		    	System.out.println("enter breath");
+		    	breath = sc.nextInt();
+				value = (area*breath);
+				System.out.println("Area of a right angled triangle"+value);
+				break;
+				
+			case 4:
+				System.out.println("enter width");
+		    	width = sc.nextInt();
+		    	System.out.println("enter length");
+		    	length = sc.nextInt();
+				value = (width*length);
+				System.out.println("Area of a rectangle"+value);
+				break;
+				
+			case 5:
+				System.out.println("enter radius");
+		    	radius = sc.nextInt();
+				value = (2*(27/2)*radius);
+				System.out.println("Circumference of a circle = "+value);
+				break;
+
+				
+				
+			default:
+				System.out.println("not in option");
+			
+		}
 	}
 
 }
-
